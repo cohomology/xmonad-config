@@ -1,0 +1,29 @@
+#!/bin/bash
+
+# read .Xresources
+xrdb -merge .Xresources
+setxkbmap de
+stalonetray &
+xscreensaver -no-splash &
+feh --bg-scale ~/Bilder/background.jpg &
+udiskie &
+xfce4-power-manager
+nm-applet --sm-disable &
+
+# rxvt-unicode daemon
+urxvtd -q -f -o &
+
+# compositing effects
+xcompmgr -c -f &
+
+# start audio server
+pulseaudio --start &
+
+# start two terminals 
+urxvtc &
+urxvfc &
+emacs &
+firefox &
+
+# xmonad 
+exec ck-launch-session dbus-launch --sh-syntax --exit-with-session xmonad
