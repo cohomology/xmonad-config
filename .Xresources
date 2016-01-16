@@ -2,7 +2,8 @@
 urxvt*geometry:			86x42
 urxvt*depth:			32
 urxvt*foreground:		#ffffff
-urxvt*background:		rgba:1616/1616/1616/6464
+urxvt*background:               rgba:0000/0000/1111/dddd
+#urxvt*background:		rgba:1616/1616/1616/6464
 urxvt*font:			xft:Inconsolata:size=18:antialias=true:hinting=true
 urxvt*boldFont:			xft:Inconsolata:size=18:antialias=true:hinting=true
 urxvt*italicFont:		xft:Inconsolata:size=18:antialias=true:hinting=true
