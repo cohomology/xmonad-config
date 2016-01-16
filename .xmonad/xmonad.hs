@@ -62,10 +62,11 @@ myWorkspaces = ["1:term","2:web","3:code","4:vm","5:media"] ++ map show [6..9]
 -- 'className' and 'resource' are used below.
 --
 myManageHook = composeAll
-    [ className =? "Firefox"        --> doShift "2:web"
-    , className =? "Gimp"           --> doFloat
-    , className =? "Emacs24"        --> doShift "3:code"
-    , className =? "stalonetray"    --> doIgnore
+    [ className =? "Firefox"          --> doShift "2:web"
+    , className =? "chromium-browser" --> doShift "2:web"
+    , className =? "Gimp"             --> doFloat
+    , className =? "Emacs24"          --> doShift "3:code"
+    , className =? "stalonetray"      --> doIgnore
     , isFullscreen --> (doF W.focusDown <+> doFullFloat)]
 
 ------------------------------------------------------------------------
@@ -112,7 +113,7 @@ xmobarTitleColor = "#FFB6B0"
 xmobarCurrentWorkspaceColor = "#CEFFAC"
 
 -- Width of the window border in pixels.
-myBorderWidth = 1
+myBorderWidth = 1 
 
 
 ------------------------------------------------------------------------
@@ -161,8 +162,7 @@ myKeys conf@(XConfig {XMonad.modMask = modMask}) = M.fromList $
   , ((modMask, xK_0), spawn "~/.xmonad/bin/pulse-volume.sh toggle")
 
   -- Eject CD tray.
-  , ((0, 0x1008FF2C),
-     spawn "eject -T")
+  , ((0, 0x1008FF2C), spawn "eject -T")
 
   --------------------------------------------------------------------
   -- "Standard" xmonad key bindings
