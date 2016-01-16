@@ -6,6 +6,8 @@ Based uppon:
 
 - http://beginners-guide-to-xmonad.readthedocs.org/configure_xmonadhs.html
 
+- https://github.com/bchurchill/xmonad-pulsevolume
+
 ```
 
 apt-get install consolekit xcompmgr xscreensaver feh python-pip xfce4-power-manager scrot suckless-tools rxvt-unicode-256color network-manager-gnome
