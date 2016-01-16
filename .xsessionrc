@@ -1,37 +1,3 @@
-#!/bin/bash
+#!/bin/sh
 
-# read .Xresources
-xrdb -merge .Xresources
-
-# set german keyboard
-setxkbmap de
-
-# load system tray
-stalonetray &
-
-# start screensaver
-xscreensaver -no-splash &
-
-# load background image
-feh --bg-scale ~/Bilder/background.jpg &
-
-# start removable file manager
-udiskie &
-
-# start xfce4 power manager
-xfce4-power-manager
-
-# start wireless / network applet
-nm-applet --sm-disable &
-
-# rxvt-unicode daemon
-urxvtd -q -f -o &
-
-# compositing effects
-xcompmgr -c -f &
-
-# start audio server
-pulseaudio --start &
-
-# xmonad 
-exec ck-launch-session dbus-launch --sh-syntax --exit-with-session xmonad
+exec ck-launch-session dbus-launch --sh-syntax --exit-with-session ~/.kxsession

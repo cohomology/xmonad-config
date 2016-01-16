@@ -1,5 +1,4 @@
--- xmonad config used by Vic Fryzel
--- Author: Vic Fryzel
+-- Modified version of the config found at:
 -- http://github.com/vicfryzel/xmonad-config
 
 import System.IO
@@ -68,7 +67,6 @@ myManageHook = composeAll
     , className =? "Emacs24"        --> doShift "3:code"
     , className =? "stalonetray"    --> doIgnore
     , isFullscreen --> (doF W.focusDown <+> doFullFloat)]
-
 
 ------------------------------------------------------------------------
 -- Layouts
@@ -153,29 +151,14 @@ myKeys conf@(XConfig {XMonad.modMask = modMask}) = M.fromList $
   , ((modMask .|. controlMask .|. shiftMask, xK_p),
      spawn myScreenshot)
 
-  -- Mute volume.
-  , ((modMask .|. controlMask, xK_m),
-     spawn "amixer -q set Master toggle")
+  -- increase volume
+  , ((modMask, xK_plus), spawn "~/.xmonad/bin/pulse-volume.sh increase")
 
-  -- Decrease volume.
-  , ((modMask .|. controlMask, xK_j),
-     spawn "amixer -q set Master 10%-")
+  -- decrease volume 
+  , ((modMask, xK_minus), spawn "~/.xmonad/bin/pulse-volume.sh decrease")
 
-  -- Increase volume.
-  , ((modMask .|. controlMask, xK_k),
-     spawn "amixer -q set Master 10%+")
-
-  -- Audio previous.
-  , ((0, 0x1008FF16),
-     spawn "")
-
-  -- Play/pause.
-  , ((0, 0x1008FF14),
-     spawn "")
-
-  -- Audio next.
-  , ((0, 0x1008FF17),
-     spawn "")
+  -- mute/unmute volume 
+  , ((modMask, xK_0), spawn "~/.xmonad/bin/pulse-volume.sh toggle")
 
   -- Eject CD tray.
   , ((0, 0x1008FF2C),
