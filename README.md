@@ -17,12 +17,12 @@ pip install udiskie
 cabal install xmonad xmonad-contrib xmobar yeganesh
 ```
 
-* Sound
+# Sound
 I modified the sound configuration of bchurchils script to only use one sound device and not all at the same time. In my chromebook, the sound card with index 0 is HDMI audio which my neighbours don't like ;-).
 
 Just adjust the DEVICE variable in pulse-volume.sh to the device you like given via "pacmd list-sinks"
 
-* Fonts
+# Fonts
 
 The configuration assumes that the powerline fonts are used. You can get them via:
 
