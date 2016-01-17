@@ -1,21 +1,22 @@
 !-- Xft settings -- !
-Xft.dpi:        96
-Xft.antialias:  true
-Xft.rgba:       rgb
-Xft.hinting:    true
+Xft.dpi: 96
+Xft.antialias: true
+Xft.rgba: rgb
+Xft.hinting:true
+Xft.hintstyle: hintslight
 
-!urxvt
-urxvt*geometry:		     86x42
-urxvt*depth:		       32
-urxvt*foreground:	     #ffffff
-urxvt*background:      rgba:0000/0000/1111/dddd
-urxvt.font:            xft:Inconsolata for Powerline:size=15
-urxvt*urlLauncher:     firefox
-urxvt*scrollBar:		   false
-urxvt*scrollBar_right: false
-urxvt*scrollstyle:		 plain
-urxvt*scrollColor:		 #323232
-urxvt*cursorColor:		 #eeeeee
+!URxvt
+URxvt*geometry:	86x42
+URxvt*depth: 32
+URxvt*foreground: #ffffff
+URxvt*background: rgba:0000/0000/1111/dddd
+URxvt.font: xft:Inconsolata for Powerline:size=15
+URxvt*urlLauncher: firefox
+URxvt*scrollBar: false
+URxvt*scrollBar_right: false
+URxvt*scrollstyle: plain
+URxvt*scrollColor: #323232
+URxvt*cursorColor: #eeeeee
 
 !*background:#161616
 !black
