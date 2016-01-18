@@ -1,3 +1,5 @@
+# xmonad
+
 The following packages are needed for this setup:
 
 Based uppon:
@@ -10,7 +12,7 @@ Based uppon:
 
 ```
 
-apt-get install consolekit xcompmgr xscreensaver feh python-pip xfce4-power-manager scrot suckless-tools rxvt-unicode-256color network-manager-gnome pulseaudio-utils silversearcher-ag
+apt-get install consolekit xcompmgr xscreensaver feh python-pip xfce4-power-manager scrot suckless-tools rxvt-unicode-256color network-manager-gnome pulseaudio-utils silversearcher-ag libtool libtool-bin autoconf automake cmake g++ pkg-config unzip python3-pip
 
 pip install udiskie neovim
 
@@ -32,3 +34,15 @@ The configuration assumes that the powerline fonts are used. You can get them vi
   ./install.sh
   fc-cache -vf ~/.local/share/fonts
 ```
+
+# Neovim
+
+To use the neovim configuration
+
+```
+git clone https://github.com/neovim/neovim
+cd neovim
+make CMAKE_EXTRA_FLAGS=-DCMAKE_INSTALL_PREFIX=/usr/local/bin
+sudo make install
+```
+
