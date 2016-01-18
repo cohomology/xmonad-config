@@ -10,9 +10,9 @@ Based uppon:
 
 ```
 
-apt-get install consolekit xcompmgr xscreensaver feh python-pip xfce4-power-manager scrot suckless-tools rxvt-unicode-256color network-manager-gnome pulseaudio-utils
+apt-get install consolekit xcompmgr xscreensaver feh python-pip xfce4-power-manager scrot suckless-tools rxvt-unicode-256color network-manager-gnome pulseaudio-utils silversearcher-ag
 
-pip install udiskie
+pip install udiskie neovim
 
 cabal install xmonad xmonad-contrib xmobar yeganesh
 ```
