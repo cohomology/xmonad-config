@@ -16,7 +16,7 @@ apt-get install haskell-platform consolekit xcompmgr xscreensaver feh python-pip
   suckless-tools rxvt-unicode-256color network-manager-gnome pulseaudio-utils libtool libtool-bin \
   autoconf automake cmake g++ pkg-config unzip python3-pip \
   python-notify2 python3-notify2 python-docopt python3-docopt python-yaml python3-yaml python-dev \
-  liblzma-dev xorg-dev libxft-dev xsel stalonetray pulseaudio
+  liblzma-dev xorg-dev libxft-dev xsel stalonetray pulseaudio lua-sec
 
 pip install udiskie neovim
 pip3 install neovim
@@ -47,7 +47,7 @@ To use the neovim configuration
 ```
 git clone https://github.com/neovim/neovim
 cd neovim
-make CMAKE_EXTRA_FLAGS=-DCMAKE_INSTALL_PREFIX=/usr/local/bin
+make CMAKE_EXTRA_FLAGS=-DCMAKE_INSTALL_PREFIX=/usr/local
 sudo make install
 ```
 
