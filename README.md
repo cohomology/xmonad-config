@@ -12,9 +12,10 @@ Based uppon:
 
 ```
 
-apt-get install consolekit xcompmgr xscreensaver feh python-pip xfce4-power-manager scrot suckless-tools rxvt-unicode-256color network-manager-gnome pulseaudio-utils silversearcher-ag libtool libtool-bin autoconf automake cmake g++ pkg-config unzip python3-pip
+apt-get install haskell-platform consolekit xcompmgr xscreensaver feh python-pip xfce4-power-manager scrot suckless-tools rxvt-unicode-256color network-manager-gnome pulseaudio-utils silversearcher-ag libtool libtool-bin autoconf automake cmake g++ pkg-config unzip python3-pip python-notify2 python3-notify2 python-docopt python3-docopt python-yaml python3-yaml python-dev
 
 pip install udiskie neovim
+pip3 install neovim
 
 cabal install xmonad xmonad-contrib xmobar yeganesh
 ```
