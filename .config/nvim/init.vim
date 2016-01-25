@@ -15,19 +15,24 @@ Plug 'tpope/vim-fugitive'
 " Language plugins
 Plug 'lervag/vimtex'
 Plug 'lukerandall/haskellmode-vim'
+Plug 'rollxx/vim-antlr'
 
 " Functional plugins
-Plug 'Valloric/YouCompleteMe'
 Plug 'vim-scripts/taglist.vim'
 Plug 'MarcWeber/vim-addon-local-vimrc'
 Plug 'nfvs/vim-perforce'
 Plug 'vim-scripts/gtags.vim'
-Plug 'rking/ag.vim'
 Plug 'Shougo/unite.vim'
 Plug 'hewes/unite-gtags'
-Plug 'critiqjo/lldb.nvim'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
+Plug 'benekastah/neomake'
+Plug 'Valloric/ListToggle'
+Plug 'lyuts/vim-rtags' 
+Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-surround'
+Plug 'Valloric/YouCompleteMe'
+Plug 'gilligan/vim-lldb'
 
 call plug#end() 
 
@@ -72,6 +77,7 @@ set formatoptions+=1            " When wrapping paragraphs, don't end lines
                                 "    with 1-letter words (looks stupid)
 set shortmess+=I                " hide the launch screen
 set clipboard=unnamedplus       " map clipboard + register
+set mouse=a                     " copy and paste with mouse
 
 " Thanks to Steve Losh for this liberating tip
 " See http://stevelosh.com/blog/2010/09/coming-home-to-vim
@@ -156,13 +162,9 @@ autocmd FileType make setlocal noexpandtab shiftwidth=2 softtabstop=0
 
 " compiler options
 compiler gcc
-let g:compiler_gcc_ignore_unmatched_lines=1 
+let g:compiler_gcc_ignore_unmatched_lines=1
 
-" always open quickfix window after make
-autocmd QuickFixCmdPost [^l]* nested copen
-autocmd QuickFixCmdPost    l* nested lwindow
-
- " Options for Valloric/YouCompleteMe
+" Options for Valloric/YouCompleteMe
 let g:ycm_confirm_extra_conf = 0 " do not ask before loading the .ycm_extra_conf.py 
 
 " taglist configuration
@@ -176,6 +178,16 @@ let Tlist_Use_Right_Window = 1
 let Tlist_Use_SingleClick = 1
 let Tlist_Use_Right_Window = 1  
 
+" local vimrc settings
+let g:local_vimrc = {'names':['.lnvimrc'],'hash_fun':'LVRHashOfFile'}
+
+" antlr plugin
+au BufRead,BufNewFile *.g set syntax=antlr3
+
+" automatically open the quickfixwindow 
+autocmd QuickFixCmdPost [^l]* nested cwindow
+autocmd QuickFixCmdPost    l* nested lwindow
+
 " all custom keymappings
 command! KGtags execute 'Gtags' expand('<cword>')
 
@@ -184,6 +196,12 @@ nnoremap <leader>t :TlistToggle<cr>
 nnoremap <leader>s :KGtags<cr>
 nnoremap <leader>f :GitFiles<cr> 
 nnoremap <leader>b :Buffers<cr>  
+nnoremap <leader>m :Neomake!<cr>
+" note that <leader>r is set by rtags!
+
+" quickfix toggle
+let g:lt_location_list_toggle_map = '<leader>l'
+let g:lt_quickfix_list_toggle_map = '<leader>q'
 
 " set code completion to <C-space> 
 inoremap <C-Space> <C-x><C-o> 
