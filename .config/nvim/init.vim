@@ -31,8 +31,13 @@ Plug 'Valloric/ListToggle'
 Plug 'lyuts/vim-rtags' 
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-surround'
+Plug 'tpope/vim-repeat'
+Plug 'tpope/vim-speeddating'
+Plug 'tmhedberg/matchit'
+Plug 'terryma/vim-multiple-cursors'
+Plug 'bronson/vim-visual-star-search'
+Plug 'airblade/vim-gitgutter'
 Plug 'Valloric/YouCompleteMe'
-Plug 'gilligan/vim-lldb'
 
 call plug#end() 
 
