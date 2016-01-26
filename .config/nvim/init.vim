@@ -37,6 +37,7 @@ Plug 'tmhedberg/matchit'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'bronson/vim-visual-star-search'
 Plug 'airblade/vim-gitgutter'
+Plug 'easymotion/vim-easymotion'
 Plug 'Valloric/YouCompleteMe'
 
 call plug#end() 
@@ -202,6 +203,8 @@ nnoremap <leader>s :KGtags<cr>
 nnoremap <leader>f :GitFiles<cr> 
 nnoremap <leader>b :Buffers<cr>  
 nnoremap <leader>m :Neomake!<cr>
+map <leader>L <Plug>(easymotion-bd-jk)
+map <leader>w <Plug>(easymotion-bd-w)
 " note that <leader>r is set by rtags!
 
 " quickfix toggle
