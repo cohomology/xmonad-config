@@ -161,6 +161,9 @@ myKeys conf@(XConfig {XMonad.modMask = modMask}) = M.fromList $
   -- mute/unmute volume 
   , ((modMask, xK_0), spawn "~/.xmonad/bin/pulse-volume.sh toggle")
 
+  -- start firefox 
+  , ((modMask, xK_f), spawn "firefox")
+
   -- Eject CD tray.
   , ((0, 0x1008FF2C), spawn "eject -T")
 
