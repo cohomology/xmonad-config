@@ -12,7 +12,7 @@ setxkbmap de
 # stalonetray &
 
 # start removable file manager
-udiskie &
+udiskie --tray &
 
 # start xfce4 power manager
 xfce4-power-manager
