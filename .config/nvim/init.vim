@@ -38,7 +38,8 @@ Plug 'terryma/vim-multiple-cursors'
 Plug 'bronson/vim-visual-star-search'
 Plug 'airblade/vim-gitgutter'
 Plug 'easymotion/vim-easymotion'
-Plug 'Valloric/YouCompleteMe'
+Plug 'rust-lang/rust.vim'
+Plug 'vim-airline/vim-airline-themes'
 
 call plug#end() 
 
