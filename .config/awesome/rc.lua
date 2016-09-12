@@ -42,7 +42,7 @@ end
 
 -- {{{ Variable definitions
 -- Themes define colours, icons, font and wallpapers.
-beautiful.init("/usr/share/awesome/themes/default/theme.lua")
+beautiful.init(awful.util.getdir("config") .. "/themes/default/theme.lua")
 
 -- {{{ Revelation
 revelation.init()
@@ -226,6 +226,8 @@ globalkeys = awful.util.table.join(
     awful.key({ modkey,           }, "Right",  awful.tag.viewnext       ),
     awful.key({ modkey,           }, "Escape", awful.tag.history.restore),
     awful.key({ modkey,           }, "e",      revelation),
+    awful.key({ modkey,           }, "F12",    function () awful.util.spawn{ "slock" } end),
+    awful.key({ modkey,           }, "b",      function () awful.util.spawn{ "firefox" } end), 
 
     awful.key({ modkey,           }, "j",
         function ()
@@ -365,6 +367,7 @@ awful.rules.rules = {
       properties = { border_width = beautiful.border_width,
                      border_color = beautiful.border_normal,
                      focus = awful.client.focus.filter,
+                     size_hints_honor = false,
                      raise = true,
                      keys = clientkeys,
                      buttons = clientbuttons } },

@@ -11,12 +11,6 @@ setxkbmap de
 # load system tray
 # stalonetray &
 
-# start screensaver
-# xscreensaver -no-splash &
-
-# load background image
-feh --bg-scale ~/Bilder/background.jpg &
-
 # start removable file manager
 udiskie &
 
