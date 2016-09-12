@@ -9,10 +9,10 @@ xrdb -merge .Xresources
 setxkbmap de
 
 # load system tray
-stalonetray &
+# stalonetray &
 
 # start screensaver
-xscreensaver -no-splash &
+# xscreensaver -no-splash &
 
 # load background image
 feh --bg-scale ~/Bilder/background.jpg &
@@ -36,4 +36,4 @@ xcompmgr -c -f &
 pulseaudio --start &
 
 # xmonad 
-xmonad
+awesome
