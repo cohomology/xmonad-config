@@ -12,6 +12,23 @@ local naughty = require("naughty")
 local menubar = require("menubar")
 local revelation = require("revelation")
 
+-- {{{ delightful
+require('delightful.widgets.datetime')
+require('delightful.widgets.pulseaudio')
+require('delightful.widgets.battery')
+
+delightful_widgets = {
+    delightful.widgets.battery,
+    delightful.widgets.pulseaudio,
+    delightful.widgets.datetime,
+}
+
+delightful_config = {
+    [delightful.widgets.pulseaudio] = {
+        mixer_command = 'pavucontrol',
+    },
+} 
+
 -- Load Debian menu entries
 require("debian.menu")
 
@@ -198,8 +215,10 @@ for s = 1, screen.count() do
 
     -- Widgets that are aligned to the right
     local right_layout = wibox.layout.fixed.horizontal()
-    if s == 1 then right_layout:add(wibox.widget.systray()) end
-    right_layout:add(mytextclock)
+    if s == 1 then
+      right_layout:add(wibox.widget.systray())
+      delightful.utils.fill_wibox_container(delightful_widgets, delightful_config, right_layout)
+    end
     right_layout:add(mylayoutbox[s])
 
     -- Now bring it all together (with the tasklist in the middle)
@@ -457,4 +476,5 @@ end)
 
 client.connect_signal("focus", function(c) c.border_color = beautiful.border_focus end)
 client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_normal end)
+
 -- }}}
