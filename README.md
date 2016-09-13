@@ -51,3 +51,10 @@ make CMAKE_BUILD_TYPE=Release CMAKE_EXTRA_FLAGS=-DCMAKE_INSTALL_PREFIX=/usr/loca
 sudo make install
 ```
 
+# Awesome
+
+```
+apt-get install lua lua-bitop-dev awesome awesome-extra
+``` 
+
+
